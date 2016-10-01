@@ -1,0 +1,94 @@
+﻿<!-- Modal -->
+<div class="modal modal-large fade" data-backdrop="true" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="list-inline nav-justified">
+                    <li class="text-left"><h2>Admin page</h2></li>
+                    <li class="text-right"><h2><a href="javascript:;" ng-click="hideAdmin()">&times;</a></h2></li>
+                </ul>
+                <h4>Team info</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <h4>Number of Teams</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" data-ng-model="data.values.numTeams" />
+                        <button class="btn btn-primary btn-sm" ng-click="data.updateTeams()">Update</button>
+                    </div>
+                </div>
+                <div class="row" ng-repeat="team in data.values.teams">
+                    <div class="col-xs-6 text-right">
+                        <h4>{{team.name}} score</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" data-ng-model="team.score" />
+                    </div>
+                </div>
+                <br />
+                <h4>Round info</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <h4>Number of Regular Rounds</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" data-ng-model="data.values.numRounds" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <h4>Categories per Round</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" data-ng-model="data.values.numCategories" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <h4>Questions per Category</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" data-ng-model="data.values.numQuestions" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <h4>Bonus Round?</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="checkbox" data-ng-model="data.values.bonusRound" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <h4>Base value</h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" data-ng-model="data.values.baseValue" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-primary btn-sm" ng-click="data.updateContent()">Update</button>
+                    </div>
+                </div>
+                <br />
+                <hr />
+                <div class="row text-center">
+                    <button class="btn btn-warning" ng-click="data.restoreValues()">Restore Settings</button>
+                    <button class="btn btn-warning" ng-click="data.saveValues()">Save Settings</button>
+                    <button class="btn btn-warning" ng-click="editContent()">Edit Category Content</button>
+                    <button class="btn btn-danger" ng-click="data.restoreCurrent()">Restore Current Game</button>
+                </div>
+                <div id="message"></div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

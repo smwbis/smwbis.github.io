@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="ConferenceJeopardy">
+<head>
+    <title>Conference Jeopardy!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+<!--    <link href="content/css/conference-bootstrap-theme.min.css" rel="stylesheet" />-->
+    <link href="content/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="content/css/toastr.min.css" rel="stylesheet" />
+    <link href="app/css/styles.css" rel="stylesheet" />
+</head>
+<body ng-cloak>
+    <br /><br /><br />
+    <div class="well container" ng-controller="mainController">
+        <div ng-include="'./app/partials/admin.html'"></div>
+        <div class="row">
+            <div class="col-xs-2">
+                <h3 class="textfill">Choosing:<br /><strong>{{data.values.teams[data.values.teamLeader].name}}</strong></h3>
+            </div>
+            <div class="col-xs-8 text-center">
+                <a class="btn btn-lg btn-warning" href="#/jeopardy">Jeopardy!</a>
+                <a class="btn btn-lg btn-warning" href="#/double">Double Jeopardy!</a>
+                <a class="btn btn-lg btn-warning" href="#/final">Final Jeopardy!</a>
+                <div class="scores text-center">
+                    <button ng-repeat="team in data.values.teams" class="btn btn-lg btn-default larger">{{team.name}}: <strong ng-class="{negative: team.score<0}">{{team.score | currencyWhole}}</strong></button>
+                </div>
+            </div>
+            <div class="col-xs-2 text-right">
+                <a ng-click="showAdmin()"><img class="img-thumbnail" id="conficon" src="./content/img/gear.jpg" /></a>
+            </div>
+            <br />
+        </div>
+    </div>
+    <div ng-view class="container"></div>
+
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/toastr.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/controllers/titleController.js"></script>
+    <script src="app/controllers/jeopardyController.js"></script>
+    <script src="app/controllers/doubleJeopardyController.js"></script>
+    <script src="app/controllers/finalJeopardyController.js"></script>
+    <script src="app/controllers/contentController.js"></script>
+    <script src="app/controllers/tileController.js"></script>
+    <script src="app/services/data.js"></script>
+    <script src="app/filters/currencyWhole.js"></script>
+    <script src="app/filters/range.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+﻿<div class="row text-center">
+    <div class="col-xs-2" ng-repeat="category in data.content[1].categories">
+        <div class="tile category-tile "><div><h3>{{category.name}}</h3></div></div>
+        <a href="" class="tile btn" ng-repeat="content in category.content" ng-class="{disabled: !content.active}" ng-click="selectTile(content, category.name, ($index+1) * 2 * data.values.baseValue)"><div><h3>${{($index+1) * 2 * data.values.baseValue}}</h3></div></a>
+    </div>
+</div>
+
+<div ng-include="'./app/partials/tile.html'"></div>

@@ -1,0 +1,13 @@
+﻿<div class="container text-center">
+    <h1>Final Jeopardy!</h1>
+    <hr />
+    <div class="row text-center">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <a href="" class="tile btn" ng-click="selectTile(data.content[2].categories[0].content[0], data.content[2].categories[0].name, null)"><div><h3>{{data.content[2].categories[0].name}}</h3></div></a>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+</div>
+
+<div ng-include="'./app/partials/tile.html'"></div>

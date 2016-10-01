@@ -1,0 +1,35 @@
+﻿<div class="row">
+    <div class="col-xs-4"><h3>Edit Content</h3></div>
+    <div class="col-xs-8 text-right">
+        <button class="btn btn-warning" ng-click="data.restoreContent()">Restore Content</button>
+        <button class="btn btn-warning" ng-click="data.saveContent()">Save Content</button>
+        <button class="btn btn-warning" ng-click="closeContent()">Done</button>
+    </div>
+</div>
+<div ng-repeat="content in data.content">
+    <hr />
+    <h4><em>{{content.name}}</em></h4>
+    <br />
+    <div class="row text-center">
+        <div class="col-xs-2"><h4>Category</h4></div>
+        <div class="col-xs-2"><h4>1</h4></div>
+        <div class="col-xs-2"><h4>2</h4></div>
+        <div class="col-xs-2"><h4>3</h4></div>
+        <div class="col-xs-2"><h4>4</h4></div>
+        <div class="col-xs-2"><h4>5</h4></div>
+    </div>
+    <br />
+    <div class="text-center" ng-repeat="category in content.categories">
+        <div class="row">
+            <div class="col-xs-2">
+                <input class="form-control" type="text" ng-model="category.name" />
+            </div>
+            <div class="col-xs-2" ng-repeat="content in category.content">
+                <textarea class="form-control" rows="4" ng-model="content.q"></textarea>
+                <textarea class="form-control" rows="4" ng-model="content.a"></textarea>
+                <h5 class="inline">Special: <input type="checkbox" ng-model="content.special" /> | Active: <input type="checkbox" ng-model="content.active" /></h5>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿<!-- Modal -->
+<div class="modal modal-large fade" data-backdrop="static" id="tileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="list-inline nav-justified">
+                    <li class="text-left"><h2>{{data.modalContent.category}}: {{data.modalContent.value | currencyWhole}}</h2></li>
+                    <li class="text-right"><h2><a href="javascript:;" ng-click="hideTile()">&times;</a></h2></li>
+                </ul>
+                <br />
+                <div class="large-tile textfill">
+                    <h1>{{data.modalContent.content.q}}</h1>
+                </div>
+                <h2></h2>
+                <hr />
+                <div class="text-center">
+                    <ul class="list-inline nav-justified">
+                        <li ng-repeat="team in data.values.teams">
+                            <h3>{{team.name}}</h3>
+                            <div class="btn-group">
+                                <div class="btn btn-lg btn-success" ng-class="{disabled: !team.active}" ng-click="changeScore($index, team, data.modalContent.value, true)"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+                                <div class="btn btn-lg btn-danger" ng-class="{disabled: !team.active}" ng-click="changeScore($index, team, data.modalContent.value, false)"><i class="glyphicon glyphicon-thumbs-down"></i></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="message"></div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

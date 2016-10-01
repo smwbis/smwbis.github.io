@@ -1,0 +1,108 @@
+﻿/* Bootstrap overrides */
+
+a {
+    color: white;
+}
+
+body {
+    background-color: navy;
+    margin-top: 8px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: white;
+    font-family:'Neo Sans Intel',Verdana,sans-serif;
+}
+
+.well {
+    background-image: linear-gradient(to bottom,blue 0,navy 100%);
+    padding: 8px;
+}
+
+#conficon {
+    height: 56px;
+    width: 56px;
+}
+
+.scores button {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    margin: 8px 8px 0;
+}
+
+.well a {
+    margin: 0 4px;
+}
+
+.larger {
+    font-size: x-large;
+}
+
+.modal-body {
+    background-color: blue;
+    border-radius: 50px;
+}
+
+.modal-large .modal-body{
+    min-height: 850px;
+}
+
+.modal-content {
+    border-radius: 50px;
+}
+
+.modal hr {
+    margin-top: 5px;
+}
+
+.modal-large .modal-dialog {
+    width: 1200px;
+    /*height: 600px;*/
+}
+
+.tile {
+    display: table;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 16px;
+    height: 90px;
+    margin: 8px 0;
+    background-color: blue;
+    vertical-align: middle;
+}
+
+.tile div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tile.category-tile {
+    margin-bottom: 24px;
+}
+
+.inline {
+    display: inline;
+}
+
+.tile.btn.disabled {
+    opacity: 0.35;
+}
+
+div.large-tile {
+    height: 700px;
+    overflow: auto;
+}
+
+div.large-tile h1 {
+    font-size: 6em;
+}
+
+.negative {
+    color: red;
+}
+
+.title {
+    width: 90%;
+}
