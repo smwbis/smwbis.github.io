@@ -18,6 +18,8 @@ app.controller('jeopardyController', ['$scope', '$location', 'Data', function ($
         for (var i = 0; i < $scope.data.values.teams.length; i++) {
             $scope.data.values.teams[i].active = true;
         }
+        localStorage.currentContent = JSON.stringify($scope.data.content);
+        localStorage.currentValues = JSON.stringify($scope.data.values);
     };
 
     $scope.selectTile = function (content, category, value) {
